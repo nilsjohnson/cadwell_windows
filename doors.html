@@ -17,13 +17,13 @@
     <script language="javscript" src="js/ga.js" type="text/javascript"></script>
     <script language="javscript" src="js/jquery.js" type="text/javascript"></script>
     <script language="javscript" src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script language="javscript" src="js/script.js" type="text/javascript"></script>
 
 </head>
 
 <body>
 
     <div class="brand">Cadwell Windows</div>
-
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -44,10 +44,10 @@
                         <a href="windows.html">Windows</a>
                     </li>
                     <li>
-                        <a href="doors.html">Doors</a>
+                        <a href="#"><b>Doors</b></a>
                     </li>
                     <li>
-                        <a href="#"><b>Storms</b></a>
+                        <a href="storms.html">Storms</a>
                     </li>
                     <li>
                         <a href="contact.html">Contact</a>
@@ -61,26 +61,56 @@
         <div class="row">
             <div class="box text-left">
                 <h2>
-                    Storms
+                    Doors
                 </h2>
                 <div class="col-lg-8">
                     <p>
-                        Storm windows protect sash from self destructing. Glass that is not insulated will end up with an interior glass surface temperature below the dew point. Water will condense, and soak into the wood and putty. This moisture cause wood movemment by expanding dry wood fibers, and by freezing. The paint will crack, and the putty will fall out.
+                        I've made a variety of custom historic doors and entrances. Here are a few past projects.
                     </p>
-                    <p>
-						Shutters, colder houses, and lead paint used to protect sash from the elements. Exterior storm windows protect the sash, while allowing us to see out windows. Interior storms will reduce the interior condensation. 
-					</p>
-					<p>
-						In my shop, I have sample storms. From Allied, I have a Historic One Light. From Harvey, I have a Harvey Tru-Channel storm. I also have traditional wooden storms and screens that I build. Many Historic District Commissions acccept these three options. I can help you decide what option works best for you.
-					</p>
-                   
-                </div>
-                <div class="col-lg-4">
-                    <img class="img-responsive well" id="auditorium-hero" src="images/storms/storm_example_1.jpg" style="max-height: 500px" />
                 </div>
             </div>
         </div>
-    </div>  
+        <div class=row>
+            <div class="col-lg-4">
+                <img class="img-responsive well pointer" onclick="openLightbox(this);" src="images/doors/TFrontDoorNoLamp.jpg" style="max-height: 500px" />
+            </div>
+            <div class="col-lg-4">
+                <img class="img-responsive well pointer" onclick="openLightbox(this);" src="images/doors/FiskResidence.jpg" style="max-height: 500px" />
+            </div>
+            <div class="col-lg-4">
+                <img class="img-responsive well pointer" onclick="openLightbox(this);" src="images/doors/IMG_0018.jpg" style="max-height: 500px" />
+            </div>
+            <div class="col-lg-4">
+                <img class="img-responsive well pointer" onclick="openLightbox(this);" src="images/doors/IMG_3726.jpg" style="max-height: 500px" />
+            </div>
+            <div class="col-lg-4">
+                <img class="img-responsive well pointer" onclick="openLightbox(this);" src="images/doors/IMG_6075.jpg" style="max-height: 500px" />
+            </div>
+        </div>
+    </div>
+    
+    <div id="background-overlay" style="display: none" onclick="closeLightbox()"></div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="lightbox">
+        <div class="modal-dialog">
+            <div class="modal-content friendly">
+                <div class="modal-header" style="text-align: right;">
+                    <span class="glyphicon glyphicon-remove" onclick="closeLightbox()" style="cursor: pointer"></span>
+                </div>
+                <div class="modal-body friendly;">
+                    <div>
+                        <a class="left carousel-control" href="#myCarousel" role="button"  onclick="lightboxChange(-1);">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <img id="modal-image" class="img-responsive" src=""/>
+                        <a class="right carousel-control" href="#myCarousel" role="button" onclick="lightboxChange(1);">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
     <footer>
         <div class="container">
             <div class="row">

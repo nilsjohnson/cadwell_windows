@@ -1,16 +1,19 @@
-var ukulele_images = [
-	"ukulele/lightbox/africanmahogfront.jpg",
-	"ukulele/lightbox/africanmahogback.jpg",
-	"ukulele/lightbox/blackwalnutsprucefront.jpg",
-	"ukulele/lightbox/blackwalnutspruceback.jpg"
+var door_images = [
+	"images/doors/FiskResidence.jpg",
+	"images/doors/IMG_0018.jpg",
+	"images/doors/IMG_3726.jpg",
+	"images/doors/IMG_6075.jpg",
+	"images/doors/TFrontDoorNoLamp.jpg"
 	
 	
 ]
-var mandolin_images = [
-	"mandolins/lightbox/european_front.jpg",
-	"mandolins/lightbox/european_back.jpg",
-	"mandolins/lightbox/rosewoodmandofront.jpg",
-	"mandolins/lightbox/rosewoodmandoback.jpg"
+var window_images = [
+	"images/windows/IMG_5028.jpg",
+	"images/windows/IMG_0844.jpg",
+	"images/windows/FittingSashtoFrame.jpg",
+	"images/windows/Fisk12over12.jpg",
+	"images/windows/IMG_4981.jpg",
+	"images/windows/EnfieldSash.jpg",
 	
 ]
 var auditorium_images = [
@@ -78,17 +81,18 @@ var switchLightbox = function(imageId)
 	$('#' + imageId).attr('src', source);
 }
 
-var lightboxChange = function(instrument, step)
+var lightboxChange = function(step)
 {
-	var srcStart = "../img/instruments/";
+	var page = window.location.pathname.split('/').pop();
+	console.log(page);
 	var images;
-	switch(instrument)
+	switch(page)
 	{
-		case "ukulele":
-			images = ukulele_images;
+		case "doors.html":
+			images = door_images;
 			break;
-		case "mandolin":
-			images = mandolin_images;
+		case "windows.html":
+			images = window_images;
 			break;
 		case "auditorium":
 			images = auditorium_images;
@@ -104,17 +108,21 @@ var lightboxChange = function(instrument, step)
 			break;
 						
 	}
+	console.log(images);
 	var curIndex = 0;
 	var sourceStr = $('#modal-image')[0].src;
 	var currentImage = sourceStr.split('/').pop();
+	console.log(currentImage);
 	for(var i = 0; i < images.length; i++)
 	{
 		if(currentImage == images[i].split('/').pop())
 		{
+			console.log('found image');
 			curIndex = i;
 			break;
 		}
 	}
+	console.log('current index: ' + curIndex);
 	var newIndex = curIndex + step;
 	if(newIndex < 0)
 	{
@@ -124,7 +132,8 @@ var lightboxChange = function(instrument, step)
 	{
 		newIndex = 0;
 	}
-	
-	var srcString = srcStart + images[newIndex];
+	console.log(newIndex);
+	var srcString = images[newIndex];
+	console.log('new source: "' + srcString + '"');
 	$('#modal-image').attr('src', srcString);
 }
