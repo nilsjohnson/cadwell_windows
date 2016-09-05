@@ -14,6 +14,7 @@ var window_images = [
 	"images/windows/Fisk12over12.jpg",
 	"images/windows/IMG_4981.JPG",
 	"images/windows/EnfieldSash.JPG",
+	"images/build/IMG_0393.JPG"
 	
 ]
 
