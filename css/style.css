@@ -1,4 +1,4 @@
-body {
+/*body {
    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   background: url(../img/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -7,6 +7,15 @@ body {
   background-size: cover;
   margin:0;
   padding:
+}*/
+
+body {
+    font-family: Helvetica,Arial,sans-serif;
+    background: url('../img/bg.png') repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 .trans-well {
