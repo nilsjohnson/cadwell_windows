@@ -1,0 +1,35 @@
+body {
+    background-color: #262522;
+    padding-bottom: 6rem; /*allow footer to always bet on bottom, but not fixed*/
+    position: relative; /*allow footer to always bet on bottom, but not fixed*/
+}
+
+.trans-well {
+	 background: rgba(255,255,255,1);
+	 margin-top: 1rem;
+	 padding: 1rem;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.container {
+  overflow:auto;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
