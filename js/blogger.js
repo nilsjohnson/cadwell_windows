@@ -1,10 +1,8 @@
-const key = 
-const userId = "3213900";
-
+const userId = "1473951187673228853";
 
 function getLatest(maxResults) {
 	let url = 'https://www.googleapis.com/blogger/v3/blogs/' + userId 
-	 + '/posts?key=' + key 
+	 + '/posts?key=' + "AIzaSyDyOzcQFTCjSmlT-nd5rbLXLca3glNkZhg" 
 	 + '&fetchBodies=false'
 	 + '&fetchImages=true';
 	
@@ -16,15 +14,21 @@ function getLatest(maxResults) {
 }
 
 function getPostById(postId) {
-	return fetch('https://www.googleapis.com/blogger/v3/blogs/' + userId + '/posts/' + postId + '?key=' +key);
+	return fetch('https://www.googleapis.com/blogger/v3/blogs/' + userId + '/posts/' + postId + '?key=' + "AIzaSyDyOzcQFTCjSmlT-nd5rbLXLca3glNkZhg");
 }
 
 function setPosts(posts) {
 	// to hold all the stuff we create
 	var parent = document.getElementById("blogger");
 
+	// if no posts
+	if(!posts) {
+		console.log("posts are null");
+		return;
+	}
+
 	for(let i = 0; i < posts.length; i++) {
-		var url = "shop.html?post=" + posts[i].id;
+		var url = "muntins.html?post=" + posts[i].id;
 
 		//outer div, each post we're showing
 		var div = document.createElement("div");
